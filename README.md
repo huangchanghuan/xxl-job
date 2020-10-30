@@ -23,8 +23,7 @@
 ### 2. 部署执行器（参考代码例子项目xxl-job-executor-springboot-jobcenter基于springboot的例子）
 
 1.引入xxl-job-core-starter依赖
-
-`        
+  
 
         <dependency>
              <groupId>com.xuxueli</groupId>
@@ -32,7 +31,6 @@
              <version>2.2.0</version>
          </dependency>
          
-         `
          
 2.配置eureka地址，用于拉取调度器admin服务地址，例如：
 
@@ -51,9 +49,7 @@
 
 @Component标注类加入spring容器
 
-@XxlJob("demoJobHandler")标注方法并带名字，一个方法等于一个定时任务
-
-`    
+@XxlJob("demoJobHandler")标注方法并带名字，一个方法等于一个定时任务 
 
      @Component
      public class DemoJobHandler {
@@ -72,6 +68,3 @@
              return ReturnT.SUCCESS;
          }
      }
-     
-    
-     `
