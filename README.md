@@ -5,7 +5,7 @@
 1. 基于xxl-job-core进行改造，实现基于eureka获取调度器服务admin，进行负载均衡，默认每30秒拉取eureka中的admin调度服务地址进行更新。
 2. 新增自动启动功能，直接引入依赖包，既可以自动starter，具有执行器角色。
 
-## 二、使用方法：参考xxl-job-executor-springboot-jobcenter基于springboot的例子
+## 二、使用方法：参考代码例子项目xxl-job-executor-springboot-jobcenter基于springboot的例子
 
 1. 引入xxl-job-core-starter依赖
 
@@ -19,11 +19,11 @@
          
          `
          
-2. 配置eureka地址，用于拉取调度器admin服务地址，例如sim签测试环境：
+2. 配置eureka地址，用于拉取调度器admin服务地址，例如：
 
 
      eureka.client.registryFetchIntervalSeconds=5
-     eureka.client.serviceUrl.defaultZone = http://10.2.37.3:8088/sim-eureka/eureka/
+     eureka.client.serviceUrl.defaultZone = http://10.2.X.X:8088/sim-eureka/eureka/
      eureka.instance.hostname=${spring.application.name}
      register-with-eureka: false
      eureka.instance.prefer-ip-address=true 
