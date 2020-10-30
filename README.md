@@ -9,7 +9,7 @@
 
 ## 一、修改执行器项目xxl-job-core为xxl-job-core-starter，实现以下功能：
 
-1. 基于xxl-job-core进行改造，实现基于eureka获取调度器服务admin，进行负载均衡，默认每30秒拉取eureka中的admin调度服务地址进行更新。
+1. xxl-job-core进行改造，对调度管理系统的发现基于eureka，默认每30秒拉取eureka中的调度管理系统地址进行更新。
 2. 零配置启动定时Job任务（直接引入依赖包，既可以自动starter，具有执行器角色）。
 
 ## 二、使用方法：
