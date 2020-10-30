@@ -11,6 +11,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>xxl-job-executor-springboot-jobcenter</module>
         <module>xxl-job-executor-sample-frameless</module>
         <module>xxl-job-executor-sample-springboot</module>
         <module>xxl-job-executor-sample-spring</module>

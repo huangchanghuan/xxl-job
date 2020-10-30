@@ -37,7 +37,15 @@ public class XxlJobExecutor  {
 
     public void setAdminAddresses(String adminAddresses) {
         this.adminAddresses = adminAddresses;
+
+
     }
+
+    public String getAdminAddresses() {
+        return this.adminAddresses;
+    }
+
+
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
     }
@@ -126,6 +134,19 @@ public class XxlJobExecutor  {
                     adminBizList.add(adminBiz);
                 }
             }
+        }
+    }
+
+    public void reInitAdminBizList()throws Exception {
+        if (adminAddresses!=null && adminAddresses.trim().length()>0) {
+            List<AdminBiz> newAdminBizList=new ArrayList<AdminBiz>();
+            for (String address: adminAddresses.trim().split(",")) {
+                if (address!=null && address.trim().length()>0) {
+                    AdminBiz adminBiz = new AdminBizClient(address.trim(), accessToken);
+                    newAdminBizList.add(adminBiz);
+                }
+            }
+            adminBizList = newAdminBizList;
         }
     }
     public static List<AdminBiz> getAdminBizList(){
