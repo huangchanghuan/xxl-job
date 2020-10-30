@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.xxl.job.core.JobCenterAutoConfiguration.java
+org.springframework.boot.SpringApplicationRunListener=com.xxl.job.core.discovery.JobCenterEurekaConfigurationListener
