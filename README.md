@@ -14,7 +14,7 @@
 
 ## 二、使用方法：
 
-### 1. 部署调度服务
+### 1. 部署后台管理系统（调度管理系统）
 
 调度服务xxl-job-admin是springboot项目，配置好eureka地址，数据库地址，spring.application.name=soa-jobcenter，启动即可。
 
@@ -22,7 +22,7 @@
 
 ### 2. 部署执行器（参考代码例子项目xxl-job-executor-springboot-jobcenter基于springboot的例子）
 
-1. 引入xxl-job-core-starter依赖
+1.引入xxl-job-core-starter依赖
 
 `        
 
@@ -34,11 +34,11 @@
          
          `
          
-2. 配置eureka地址，用于拉取调度器admin服务地址，例如：
+2.配置eureka地址，用于拉取调度器admin服务地址，例如：
 
 
      eureka.client.registryFetchIntervalSeconds=5
-     eureka.client.serviceUrl.defaultZone = http://10.2.X.X:8088/sim-eureka/eureka/
+     eureka.client.serviceUrl.defaultZone = http://10.2.X.X:8088/si-eureka/eureka/
      eureka.instance.hostname=${spring.application.name}
      register-with-eureka: false
      eureka.instance.prefer-ip-address=true 
@@ -47,7 +47,7 @@
      eureka.instance.lease-renewal-interval-in-seconds=5
 
 
-3. 编写定时任务：
+ 3.编写定时任务：
 
 @Component标注类加入spring容器
 
