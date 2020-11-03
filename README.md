@@ -1,7 +1,7 @@
 # 定时任务框架（基于xxl-job开源项目进行优化改造）
 
-
  ![image](doc/images/111.jpg)
+
 
 
 ## 一、修改执行器项目xxl-job-core为xxl-job-core-starter，实现以下功能：
