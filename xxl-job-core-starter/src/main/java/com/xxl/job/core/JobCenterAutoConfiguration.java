@@ -231,6 +231,14 @@ public class JobCenterAutoConfiguration {
     private String appName;
 
     private String discoveryAdminAddress() {
+        //判断是否通过eureka获取admin address
+        if(!jobCenterProperties.getEureka()){
+            if (jobCenterProperties.getAdminAddress()==null){
+                LOGGER.error("Jobcenter AdminAddress is null");
+                return null;
+            }
+            return jobCenterProperties.getAdminAddress();
+        }
         String serviceId = jobCenterProperties.getServiceId();
         List<String> adminAddresList = new ArrayList<>();
         List<ServiceInstance> instanceList = discoveryClient.getInstances(serviceId);
@@ -308,6 +316,10 @@ public class JobCenterAutoConfiguration {
     @PostConstruct
     public void init() {
         this.initDefaultParm();
+        if(!jobCenterProperties.getEureka()){
+            //使用默认配置admin address，不再启动定时任务刷新admin address
+            return;
+        }
         ScheduledExecutorService scheduleReport = Executors.newScheduledThreadPool(1, new NamedThreadFactory());
         scheduleReport.scheduleAtFixedRate(new Runnable() {
             @Override

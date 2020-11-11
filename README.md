@@ -6,7 +6,7 @@
 
 ## 一、修改执行器项目xxl-job-core为xxl-job-core-starter，实现以下功能：
 
-1. 基于eureka对调度管理系统的发现
+1. 基于eureka对调度管理系统的发现（可以配置）
 2. 零配置启动定时Job任务
 
 ## 二、使用方法：
@@ -64,3 +64,13 @@
              return ReturnT.SUCCESS;
          }
      }
+     
+     
+### 3.配置不使用eureka
+
+platform：
+    jobcenter：
+        adminAddress：http://xx.xx:prot,http://xx.xx:prot2 （admin地址，英文逗号相隔，建议通过nginx进行负载，填nginx地址即可）
+eureka:
+    client:
+        enabled: false

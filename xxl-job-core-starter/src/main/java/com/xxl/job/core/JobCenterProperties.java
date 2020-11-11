@@ -1,6 +1,7 @@
 
 package com.xxl.job.core;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "platform.jobcenter")
@@ -19,6 +20,27 @@ public class JobCenterProperties {
     private int logRetentionDays;
 
     private String localIp;
+
+    @Value("${eureka.client.enabled:true}")
+    private boolean eureka=true;
+
+    private String adminAddress;
+
+    public String getAdminAddress() {
+        return adminAddress;
+    }
+
+    public void setAdminAddress(String adminAddress) {
+        this.adminAddress = adminAddress;
+    }
+
+    public boolean getEureka() {
+        return eureka;
+    }
+
+    public void setEureka(boolean eureka) {
+        this.eureka = eureka;
+    }
 
     public String getAccessToken() {
         return accessToken;
