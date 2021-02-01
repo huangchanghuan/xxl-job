@@ -18,6 +18,7 @@
     </modules>
 
 	<properties>
+		<spring-cloud-alibaba.version>2.2.4.RELEASE</spring-cloud-alibaba.version>
 		<httpclient.version>4.5.6</httpclient.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>

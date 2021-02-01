@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 10.2.37.3:4080
+        namespace: b71f975e-054f-4b64-9613-9bb94ec7bdab
+        file-extension: yaml
+      discovery:
+        # 指定nacos server的地址
+        server-addr: 10.2.37.3:4080
+        cluster-name: sim-job-manage
+        namespace: b71f975e-054f-4b64-9613-9bb94ec7bdab
+  application:
+    name: sim-job-manage
